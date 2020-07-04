@@ -8,16 +8,18 @@ namespace Business_Rules_Engin
          
         
         public void calculation()
-        { 
-        
+        {
 
+            string sliptype = "";
 
 
         switch (payment)
          {
                 case (int)PaymentTypeEnum.Payment.Physical_Product:
+                    sliptype = "Packing slip for shipping";
                     break;
                 case (int)PaymentTypeEnum.Payment.Book:
+                    sliptype = "";
                     break;
                 case (int)PaymentTypeEnum.Payment.MemberShip:
                     break;

@@ -10,7 +10,7 @@ namespace Promotion_Engin
         public void Calculate(List<Product> products)
         {
                         
-            int sumA = 0, sumB=0, sumC, subD = 0;
+            int sumA = 0, sumB=0, sumC=0, sumD = 0;
 
             var groupList = products.GroupBy(i => i.Unit);
 
@@ -31,9 +31,11 @@ namespace Promotion_Engin
                             }
                             else
                             {
+
                                 if (itemcount == 3)
                                 {
                                     sumA = 130;
+
                                 }
                                 else
                                     sumA += item.Price;
@@ -62,25 +64,26 @@ namespace Promotion_Engin
                                 else
                                     sumB += item.Price;
                             }
-
-
                         }
-
-
 
                         break;
 
                     case "C":
-                    case "D":
-
-
-
+                        foreach (var item in items)
+                        {
+                            sumC += item.Price;
+                        }
                         break;
 
+                    case "D":
+
+                        foreach (var item in items)
+                        {
+                            sumD += item.Price;
+                        }
+                        break;
                 }
-
-
-                           }
+                    }
         }
 
 

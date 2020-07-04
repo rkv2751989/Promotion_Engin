@@ -26,8 +26,8 @@ namespace Promotion_UnitTest
             p1.Price = Convert.ToInt16(util.Unit.A) ;
 
             Product p2 = new Product();
-            p2.Unit = "B";
-            p2.Price = Convert.ToInt16(util.Unit.B);
+            p2.Unit = "A";
+            p2.Price = Convert.ToInt16(util.Unit.A);
 
             Product p4 = new Product();
             p4.Unit = "A";
@@ -39,16 +39,16 @@ namespace Promotion_UnitTest
 
 
             Product p3 = new Product();
-            p3.Unit = "C";
-            p3.Price = Convert.ToInt16(util.Unit.C);
+            p3.Unit = "A";
+            p3.Price = Convert.ToInt16(util.Unit.A);
 
             List<Product> lstunit = new List<Product>();
             lstunit.Add(p1);
             lstunit.Add(p2);
             lstunit.Add(p3);
             lstunit.Add(p4);
-            lstunit.Add(p5);
-            lstunit.Add(p5);
+            //lstunit.Add(p5);
+            //lstunit.Add(p5);
             obj.Calculate(lstunit);   
         
         }
