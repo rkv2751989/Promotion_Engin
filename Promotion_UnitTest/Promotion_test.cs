@@ -49,7 +49,7 @@ namespace Promotion_UnitTest
             lstunit.Add(p4);
             lstunit.Add(p5);
             lstunit.Add(p5);
-            obj.calculation(lstunit);   
+            obj.Calculate(lstunit);   
         
         }
     }
