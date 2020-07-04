@@ -12,11 +12,11 @@ namespace Promotion_Engin
         public void calculation(List<Product> product)
         {
             int sumA = 0, sumB, sumC, subD = 0;
-            var g = product.GroupBy(i => i.Unit);
+            
+            var groupList = product.GroupBy(i => i.Unit);
 
-            foreach (var items in g)
+            foreach (var items in groupList)
             {
-
                 switch (items.Key)
                 {
                     case "A":
@@ -32,13 +32,38 @@ namespace Promotion_Engin
                             }
                             else 
                             {
-                                sumA = 130 + item.Price;
+                                if(itemcount ==3)
+                                {
+                                    sumA = 130;
+                                }
+                                else
+                                sumA += item.Price;
                             }
                         }
 
 
                         break;
                     case "B":
+
+                        int itemcnt = 0;
+
+                        foreach (var item in items)
+                        {
+                            itemcnt++;
+                            if (items.Count() > 2)
+                            {
+                                sumA = sumA + item.Price;
+                            }
+                            else if(items.Count()==2)
+                            {
+
+                            }
+
+
+                        }
+
+
+
                         break;
 
 
