@@ -5,15 +5,14 @@ using System.Security.Cryptography.X509Certificates;
 
 namespace Promotion_Engin
 {
-    public class Promotion
+    public class Promotion : Ipromotion
     {
-
-
-        public void calculation(List<Product> product)
+        public void Calculate(List<Product> products)
         {
+                        
             int sumA = 0, sumB, sumC, subD = 0;
-            
-            var groupList = product.GroupBy(i => i.Unit);
+
+            var groupList = products.GroupBy(i => i.Unit);
 
             foreach (var items in groupList)
             {
@@ -30,14 +29,14 @@ namespace Promotion_Engin
                             {
                                 sumA = sumA + item.Price;
                             }
-                            else 
+                            else
                             {
-                                if(itemcount ==3)
+                                if (itemcount == 3)
                                 {
                                     sumA = 130;
                                 }
                                 else
-                                sumA += item.Price;
+                                    sumA += item.Price;
                             }
                         }
 
@@ -54,7 +53,7 @@ namespace Promotion_Engin
                             {
                                 sumA = sumA + item.Price;
                             }
-                            else if(items.Count()==2)
+                            else if (items.Count() == 2)
                             {
 
                             }
@@ -76,33 +75,13 @@ namespace Promotion_Engin
 
                         break;
 
-
-
-
-
-
-
-
                 }
 
 
-
-
-
-            }
+                           }
         }
 
 
-    }
-
-
-    public class Product
-    {
-        public int Id { get; set; }
-        public string Unit { get; set; }
-        public int Price { get; set; }
-        public bool status { get; set; }
-    
     }
 
 }
