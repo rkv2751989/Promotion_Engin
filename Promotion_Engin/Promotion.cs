@@ -66,6 +66,15 @@ namespace Promotion_Engin
 
                         break;
 
+                    case "C":
+                    case "D":
+
+
+
+
+
+
+                        break;
 
 
 
