@@ -47,8 +47,10 @@ namespace Promotion_UnitTest
             lstunit.Add(p2);
             lstunit.Add(p3);
             lstunit.Add(p4);
+            lstunit.Add(p5);
             //lstunit.Add(p5);
             //lstunit.Add(p5);
+           // lstunit.Add(p5);
             obj.Calculate(lstunit);   
         
         }

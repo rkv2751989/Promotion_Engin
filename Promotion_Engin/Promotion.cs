@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 
@@ -19,28 +20,24 @@ namespace Promotion_Engin
                 switch (items.Key)
                 {
                     case "A":
+                       
+                            int closestnumber =  closestNumber(items.Count(), 3);
+                            int Discounted_Value_forA = closestnumber * 130;
+                            int remaningItems = items.Count() - (closestnumber*3);
 
-                        int itemcount = 0;
-
-                        foreach (var item in items)
-                        {
-                            itemcount++;
-                            if (items.Count() < 3)
+                            foreach (var item in items)
                             {
+                            if (remaningItems == 0)
+                                break;
+                            
+                            if(remaningItems!=0)
+                            { 
                                 sumA = sumA + item.Price;
                             }
-                            else
-                            {
+                            remaningItems--;
 
-                                if (itemcount == 3)
-                                {
-                                    sumA = 130;
-
-                                }
-                                else
-                                    sumA += item.Price;
-                            }
-                        }
+                             }
+                        sumA += Discounted_Value_forA;
 
 
                         break;
@@ -50,6 +47,11 @@ namespace Promotion_Engin
 
                         foreach (var item in items)
                         {
+
+                            int rem = items.Count() / 2;
+
+                            
+
                             itemcnt++;
                             if (items.Count() < 2)
                             {
@@ -57,12 +59,12 @@ namespace Promotion_Engin
                             }
                             else
                             {
-                                if (itemcnt == 2)
-                                {
-                                    sumB = 45;
-                                }
-                                else
-                                    sumB += item.Price;
+                                //if ( == 2)
+                                //{
+                                //    sumB = 45;
+                                //}
+                                //else
+                                //    sumB += item.Price;
                             }
                         }
 
@@ -86,6 +88,11 @@ namespace Promotion_Engin
                     }
         }
 
+         int closestNumber(int n, int m)
+        {
+            int q = n / m;
+            return q;
+        }
 
     }
 
